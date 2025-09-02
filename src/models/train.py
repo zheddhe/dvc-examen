@@ -37,7 +37,7 @@ def main():
     logging.info("Fit du modèle")
     model.fit(X_train, y_train)  # type: ignore
 
-    model_path = os.path.join(models_dir, "model.pkl")
+    model_path = os.path.join(models_dir, "gbr_model.pkl")
     joblib.dump(model, model_path)
     logging.info(f"Modèle sauvegardé: {model_path}")
 

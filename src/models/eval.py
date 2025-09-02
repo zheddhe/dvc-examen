@@ -25,7 +25,7 @@ def main():
     os.makedirs(processed_dir, exist_ok=True)
     os.makedirs(metrics_dir, exist_ok=True)
 
-    model_path = os.path.join(models_dir, "model.pkl")
+    model_path = os.path.join(models_dir, "gbr_model.pkl")
     logging.info(f"Chargement modèle: {model_path}")
     model = joblib.load(model_path)
 

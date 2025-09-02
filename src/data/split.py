@@ -32,9 +32,10 @@ def main():
     logging.info(f"Chargement des données brutes depuis {raw_path}")
     df = pd.read_csv(raw_path)
 
-    # séparation features / cible
+    # séparation features (la date n'est pas considérée comme pertinente et mise de côté) / cible
     target_col = "silica_concentrate"
-    X = df.drop(columns=[target_col])
+    date_col = "date"
+    X = df.drop(columns=[target_col, date_col])
     y = df[target_col]
 
     # split train/test
