@@ -1,5 +1,4 @@
 import os
-import json
 import logging
 import joblib
 import pandas as pd
@@ -74,11 +73,6 @@ def main():
     best_pkl = os.path.join(models_dir, "best_params.pkl")
     joblib.dump(best, best_pkl)
     logging.info(f"Best params sauvegardés: {best_pkl}")
-
-    best_json = os.path.join(models_dir, "best_params.json")
-    with open(best_json, "w", encoding="utf-8") as f:
-        json.dump(best, f, indent=2)
-    logging.info(f"Résumé JSON sauvegardé: {best_json}")
 
     logging.info("✅ GridSearch terminé.")
 
