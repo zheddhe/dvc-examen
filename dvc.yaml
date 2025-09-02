@@ -1,12 +1,4 @@
 stages:
-  get_raw:
-    cmd: >
-      dvc import-url
-      https://datascientest-mlops.s3.eu-west-1.amazonaws.com/mlops_dvc_fr/raw.csv
-      data/raw/raw.csv
-    outs:
-      - data/raw/raw.csv
-
   split:
     cmd: python src/data/split.py
     deps:
