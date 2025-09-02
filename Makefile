@@ -19,7 +19,7 @@ req: ## met a jour les dependances (via requirements.txt)
 dvc_set: ## configure le repo dvc S3 (dagshub) dans l'env de dev
 	source .venv/bin/activate
 	@echo "==> DVC_INIT: remove data models from git management"
-	dvc remote add origin s3://dvc -f
+	dvc remote add -f -d origin s3://dvc
 	dvc remote modify origin endpointurl https://dagshub.com/${DAGSHUB_USER}/${DAGSHUB_REPO}.dvc
 	dvc remote modify origin --local access_key_id ${DAGSHUB_KEY}
 	dvc remote modify origin --local secret_access_key ${DAGSHUB_KEY}
